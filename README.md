@@ -131,6 +131,6 @@ Persistence for user-defined structures
 📬 Contact
 
 Your Name
-GitHub: https://github.com/yourusername
+GitHub: https://github.com/tfreeman04
 
-LinkedIn: https://linkedin.com/in/yourprofile
+LinkedIn: https://linkedin.com/in/thomasfreeman-jones
