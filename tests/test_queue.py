@@ -1,8 +1,8 @@
 import pytest 
-from structures.queue import queue_empty, queue, Full
+from structures.queue import queue_empty, Queue, Full
 
 def test_enqueue_dequeue():
-    q = queue(maxsize=3)
+    q = Queue(maxsize=3)
     q.enqueue(1)
     q.enqueue(2)
     q.enqueue(3)
@@ -13,14 +13,14 @@ def test_enqueue_dequeue():
     assert q.is_empty()
     assert q.size() == 0
 def test_peek():
-    q = queue()
+    q = Queue()
     q.enqueue('a')
     q.enqueue('b')
     
     assert q.peek() == 'a'
     assert q.size() == 2  # size should remain unchanged after peek
 def test_empty_dequeue_peek():
-    q = queue()
+    q = Queue()
     
     with pytest.raises(queue_empty):
         q.dequeue()
@@ -28,14 +28,14 @@ def test_empty_dequeue_peek():
     with pytest.raises(queue_empty):
         q.peek()
 def test_full_enqueue():
-    q = queue(maxsize=2)
+    q = Queue(maxsize=2)
     q.enqueue(1)
     q.enqueue(2)
     
     with pytest.raises(Full):
         q.enqueue(3)
 def test_size():
-    q = queue()
+    q = Queue()
     assert q.size() == 0
     
     q.enqueue(10)
@@ -47,7 +47,7 @@ def test_size():
     q.dequeue()
     assert q.size() == 1
 def test_is_empty():
-    q = queue()
+    q = Queue()
     assert q.is_empty() is True
     
     q.enqueue(5)

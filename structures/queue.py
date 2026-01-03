@@ -1,12 +1,12 @@
-class queue_empty(Exception):
+class Queue_empty(Exception):
     """ raised when attempting to dequeue or peek from an empty Queue"""
     pass
 class Full(Exception):
     """ raised when attempting to enqueue to a full Queue"""
     pass
-class queue:
+class Queue:
     def __init__(self):
-        self._itemsitems = []
+        self._items = []
         self.maxSize = 20
 
     def is_empty(self):

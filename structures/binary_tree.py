@@ -109,3 +109,50 @@ class binary_tree:
             return self._search_rec(current_node.left, value)
         else:
             return self._search_rec(current_node.right, value)
+        
+    def height(self):
+        """Return the height of the binary tree"""
+        return self._height_rec(self.root)
+    
+    def _height_rec(self, current_node):
+        if current_node is None:
+            return -1
+        left_height = self._height_rec(current_node.left)
+        right_height = self._height_rec(current_node.right)
+        return 1 + max(left_height, right_height)   
+    
+    def size(self):
+        """Return the number of nodes in the binary tree"""
+        return self._size_rec(self.root)
+    
+    def _size_rec(self, current_node):
+        if current_node is None:
+            return 0
+        return 1 + self._size_rec(current_node.left) + self._size_rec(current_node.right)
+    
+    def bfs_traversal(self):
+        """Breadth-First Search (Level Order Traversal)"""
+        result = []
+        if not self.root:
+            return result
+        
+        queue = [self.root]
+        while queue:
+            current_node = queue.pop(0)
+            result.append(current_node.value)
+            if current_node.left:
+                queue.append(current_node.left)
+            if current_node.right:
+                queue.append(current_node.right)
+        
+        return result
+    
+    def dfs_traversal(self):
+        """Depth-First Search (Preorder Traversal)"""
+        return self.preorder_traversal()
+    
+    def clear(self):
+        """Clear the binary tree"""
+        self.root = None
+    
+    
