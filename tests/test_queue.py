@@ -56,7 +56,7 @@ def test_is_empty():
     q.dequeue()
     assert q.is_empty() is True
 def test_repr():
-    q = queue()
+    q = Queue()
     q.enqueue(1)
     q.enqueue(2)
     q.enqueue(3)

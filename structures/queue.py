@@ -5,10 +5,12 @@ class Full(Exception):
     """ raised when attempting to enqueue to a full Queue"""
     pass
 class Queue:
+    
     def __init__(self):
         self._items = []
         self.maxSize = 20
-
+# below are the methods for a queue data structure the method are
+    
     def is_empty(self):
         return len(self._items) == 0
 
